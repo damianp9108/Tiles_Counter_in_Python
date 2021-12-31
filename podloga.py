@@ -1,10 +1,20 @@
 def polePodlogiWzorKlasyczny(l, w):
-    1.05 * l * w
+    return 1.05 * l * w
 
 
 def polePodlogiWzorKaro(l, w):
-    1.1 * l * w
+    return 1.1 * l * w
 
 
 def polePlytkiPodlogowej(dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi):
-    (dlugoscPlytkiPodlogowej + szerokoscFugi) * (szerokoscPlytkiPodlogowej + szerokoscFugi)
+    return (dlugoscPlytkiPodlogowej + szerokoscFugi) * (szerokoscPlytkiPodlogowej + szerokoscFugi)
+
+
+def objetoscFugiDlaPlytkiPodlogowej(dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi,
+                                    wysokoscFugi):
+    return (dlugoscPlytkiPodlogowej * szerokoscFugi * wysokoscFugi) + (
+            szerokoscPlytkiPodlogowej * szerokoscFugi * wysokoscFugi)
+
+
+dlugoscPlytkiPodlogowej = 0.5
+szerokoscPlytkiPodlogowej = 0.5
