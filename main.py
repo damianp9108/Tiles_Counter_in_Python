@@ -16,33 +16,39 @@ def main():
             l = float(input("Prosze podac dlugosc pomieszczenia w metrach: "))
             shouldContinue = False
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == False:
         try:
             w = float(input("Prosze podac szerokosc pomieszczenia w metrach: "))
             shouldContinue = True
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == True:
         try:
             h = float(input("Prosze podac wysokosc pomieszczenia w metrach: "))
             shouldContinue = False
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == False:
         try:
@@ -50,14 +56,16 @@ def main():
             if liczbaDrzwi.is_integer():
                 shouldContinue = True
             else:
-                print "Prosze podac liczbe calkowita"
+                print ("Prosze podac liczbe calkowita")
 
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == True:
         try:
@@ -65,58 +73,68 @@ def main():
             if liczbaOkien.is_integer():
                 shouldContinue = False
             else:
-                print "Prosze podac liczbe calkowita"
+                print ("Prosze podac liczbe calkowita")
 
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == False:
         try:
             wysokoscDrzwi = float(input("Prosze podac wysokosc otworu drzwiowego w metrach: "))
             shouldContinue = True
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == True:
         try:
             szerokoscDrzwi = float(input("Prosze podac szerokosc otworu drzwiowego w metrach: "))
             shouldContinue = False
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == False:
         try:
             wysokoscOkna = float(input("Prosze podac wysokosc otworu okiennego w metrach: "))
             shouldContinue = True
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     while shouldContinue == True:
         try:
             szerokoscOkna = float(input("Prosze podac szerokosc otworu okiennego w metrach: "))
             shouldContinue = False
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
     pole_plytki_podlogowej = polePlytkiPodlogowej(dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi)
 
@@ -126,16 +144,18 @@ def main():
             "Prosze wybrac wzor ulozenia plytek dla podlogi. Wpisz '1' dla wzoru klasyczego lub '2' dla wzoru karo: "))
 
             if ((wzorPodlogi != 1) and (wzorPodlogi != 2)):
-                print "Niepoprawne dane"
+                print ("Niepoprawne dane")
             else:
                 shouldContinue = True
 
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
 
 
@@ -145,16 +165,18 @@ def main():
                 "Prosze wybrac wzor ulozenia plytek dla sciany. Wpisz '1' dla wzoru klasyczego lub '2' dla wzoru karo: "))
 
             if ((wzorSciany != 1) and (wzorSciany != 2)):
-                print "Niepoprawne dane"
+                print ("Niepoprawne dane")
             else:
                 shouldContinue = False
 
         except SyntaxError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except NameError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
         except TypeError:
-            print "Niepoprawne dane"
+            print ("Niepoprawne dane")
+        except ValueError:
+            print ("Niepoprawne dane")
 
 
 
@@ -216,7 +238,7 @@ def main():
 
 
 
-    elif (wzorPodlogi == 2):
+    elif (wzorSciany == 2):
 
         poleScianBezOtworow = poleScianBezOtworowWzorKaro(w, l, h)
         poleScianZotworami = poleScianBezOtworow - poleOtworowSciennych
