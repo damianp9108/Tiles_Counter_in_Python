@@ -1,15 +1,11 @@
-from fuga import szerokoscFugi, wysokoscFugi, wagaFugiDla1dm3
-from podloga import polePodlogiWzorKlasyczny, objetoscFugiDlaPlytkiPodlogowej, dlugoscPlytkiPodlogowej, \
-    szerokoscPlytkiPodlogowej, polePlytkiPodlogowej, polePodlogiWzorKaro
-from sciana import polePlytkiSciennej, poleWszystkichOtworowSciennych, dlugoscPlytkiSciennej, szerokoscPlytkiSciennej, \
-    poleScianBezOtworowWzorKlasyczny, objetoscFugiDlaPlytkiSciennej, poleScianBezOtworowWzorKaro
-
-pole_plytki_podlogowej = polePlytkiPodlogowej(dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi)
-pole_plytki_sciennej = polePlytkiSciennej(dlugoscPlytkiSciennej, szerokoscPlytkiSciennej, szerokoscFugi)
+from podloga import polePodlogiWzorKlasyczny, objetoscFugiDlaPlytkiPodlogowej, polePodlogiWzorKaro, polePlytkiPodlogowej
+from sciana import poleWszystkichOtworowSciennych, poleScianBezOtworowWzorKlasyczny, \
+    objetoscFugiDlaPlytkiSciennej, poleScianBezOtworowWzorKaro, polePlytkiSciennej
 
 
-def podlogaWzorKlasyczny(l, w):
+def podlogaWzorKlasyczny(l, w, dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi, wysokoscFugi, wagaFugiDla1dm3):
     pole_Podlogi = polePodlogiWzorKlasyczny(l, w)
+    pole_plytki_podlogowej = polePlytkiPodlogowej(dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi)
     n = pole_Podlogi / pole_plytki_podlogowej
     liczbaPotrzebnychPlytek = int(n) + 1
 
@@ -20,14 +16,15 @@ def podlogaWzorKlasyczny(l, w):
     wagaPotrzebnejFugiDlaPlytekPodlogowych = objetoscFugiDlaWszystkichPlytekWdm3 * wagaFugiDla1dm3
 
     print ("")
-    print ("Liczba potrzebnych plytek podlogowych dla wzoru klasycznego: " + str(liczbaPotrzebnychPlytek))
-    print ("Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekPodlogowych) + " kg")
+    print ("* Liczba potrzebnych plytek podlogowych dla wzoru klasycznego: " + str(liczbaPotrzebnychPlytek))
+    print ("* Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekPodlogowych) + " kg")
 
     return wagaPotrzebnejFugiDlaPlytekPodlogowych
 
 
-def podlogaWzorKaro(l, w):
+def podlogaWzorKaro(l, w, dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi, wysokoscFugi, wagaFugiDla1dm3):
     pole_Podlogi = polePodlogiWzorKaro(l, w)
+    pole_plytki_podlogowej = polePlytkiPodlogowej(dlugoscPlytkiPodlogowej, szerokoscPlytkiPodlogowej, szerokoscFugi)
     n = pole_Podlogi / pole_plytki_podlogowej
     liczbaPotrzebnychPlytek = int(n) + 1
 
@@ -38,18 +35,18 @@ def podlogaWzorKaro(l, w):
     wagaPotrzebnejFugiDlaPlytekPodlogowych = objetoscFugiDlaWszystkichPlytekWdm3 * wagaFugiDla1dm3
 
     print ("")
-    print ("Liczba potrzebnych plytek podlogowych dla wzoru karo: " + str(liczbaPotrzebnychPlytek))
-    print ("Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekPodlogowych) + " kg")
+    print ("* Liczba potrzebnych plytek podlogowych dla wzoru karo: " + str(liczbaPotrzebnychPlytek))
+    print ("* Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekPodlogowych) + " kg")
 
     return wagaPotrzebnejFugiDlaPlytekPodlogowych
 
 
-def scianaWzorKlasyczny(l, w, h, liczbaDrzwi, liczbaOkien, wysokoscDrzwi, szerokoscDrzwi, wysokoscOkna, szerokoscOkna):
+def scianaWzorKlasyczny(l, w, h, liczbaDrzwi, liczbaOkien, wysokoscDrzwi, szerokoscDrzwi, wysokoscOkna, szerokoscOkna, dlugoscPlytkiSciennej, szerokoscPlytkiSciennej, szerokoscFugi, wysokoscFugi, wagaFugiDla1dm3):
     poleScianBezOtworowWzorKlas = poleScianBezOtworowWzorKlasyczny(w, l, h)
     poleScianZotworami = poleScianBezOtworowWzorKlas - poleWszystkichOtworowSciennych(liczbaDrzwi, liczbaOkien,
                                                                                       wysokoscDrzwi, szerokoscDrzwi,
                                                                                       wysokoscOkna, szerokoscOkna)
-
+    pole_plytki_sciennej = polePlytkiSciennej(dlugoscPlytkiSciennej, szerokoscPlytkiSciennej, szerokoscFugi)
     n = poleScianZotworami / pole_plytki_sciennej
     liczbaPotrzebnychPlytek = int(n) + 1
 
@@ -60,18 +57,18 @@ def scianaWzorKlasyczny(l, w, h, liczbaDrzwi, liczbaOkien, wysokoscDrzwi, szerok
     wagaPotrzebnejFugiDlaPlytekSciennych = objetoscFugiDlaWszystkichPlytekWdm3 * wagaFugiDla1dm3
 
     print ("")
-    print ("Liczba potrzebnych plytek sciennych dla wzoru klasycznego: " + str(liczbaPotrzebnychPlytek))
-    print ("Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekSciennych) + " kg")
+    print ("* Liczba potrzebnych plytek sciennych dla wzoru klasycznego: " + str(liczbaPotrzebnychPlytek))
+    print ("* Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekSciennych) + " kg")
 
     return wagaPotrzebnejFugiDlaPlytekSciennych
 
 
-def scianaWzorKaro(l, w, h, liczbaDrzwi, liczbaOkien, wysokoscDrzwi, szerokoscDrzwi, wysokoscOkna, szerokoscOkna):
+def scianaWzorKaro(l, w, h, liczbaDrzwi, liczbaOkien, wysokoscDrzwi, szerokoscDrzwi, wysokoscOkna, szerokoscOkna, dlugoscPlytkiSciennej, szerokoscPlytkiSciennej, szerokoscFugi, wysokoscFugi, wagaFugiDla1dm3):
     poleScianBezOtworow = poleScianBezOtworowWzorKaro(w, l, h)
     poleScianZotworami = poleScianBezOtworow - poleWszystkichOtworowSciennych(liczbaDrzwi, liczbaOkien, wysokoscDrzwi,
                                                                               szerokoscDrzwi, wysokoscOkna,
                                                                               szerokoscOkna)
-
+    pole_plytki_sciennej = polePlytkiSciennej(dlugoscPlytkiSciennej, szerokoscPlytkiSciennej, szerokoscFugi)
     n = poleScianZotworami / pole_plytki_sciennej
     liczbaPotrzebnychPlytek = int(n) + 1
 
@@ -82,16 +79,16 @@ def scianaWzorKaro(l, w, h, liczbaDrzwi, liczbaOkien, wysokoscDrzwi, szerokoscDr
     wagaPotrzebnejFugiDlaPlytekSciennych = objetoscFugiDlaWszystkichPlytekWdm3 * wagaFugiDla1dm3
 
     print ("")
-    print ("Liczba potrzebnych plytek sciennych dla wzoru karo: " + str(liczbaPotrzebnychPlytek))
-    print ("Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekSciennych) + " kg")
+    print ("* Liczba potrzebnych plytek sciennych dla wzoru karo: " + str(liczbaPotrzebnychPlytek))
+    print ("* Waga potrzebnej fugi: " + str(wagaPotrzebnejFugiDlaPlytekSciennych) + " kg")
 
     return wagaPotrzebnejFugiDlaPlytekSciennych
 
 
 def wyborWzoruDlaPodlogi():
-    badInput = True
 
-    while badInput:
+    shouldContinue = True
+    while shouldContinue:
         try:
             wzorPodlogi = float(input(
                 "Prosze wybrac wzor ulozenia plytek dla podlogi. Wpisz '1' dla wzoru klasyczego lub '2' dla wzoru karo: "))
@@ -99,7 +96,7 @@ def wyborWzoruDlaPodlogi():
             if ((wzorPodlogi != 1) and (wzorPodlogi != 2)):
                 print ("Niepoprawne dane")
             else:
-                badInput = False
+                shouldContinue = False
 
         except SyntaxError:
             print ("Niepoprawne dane")
@@ -114,8 +111,9 @@ def wyborWzoruDlaPodlogi():
 
 
 def wyborWzoruDlaSciany():
-    badInput = True
-    while badInput:
+
+    shouldContinue = True
+    while shouldContinue:
         try:
             wzorSciany = float(input(
                 "Prosze wybrac wzor ulozenia plytek dla sciany. Wpisz '1' dla wzoru klasyczego lub '2' dla wzoru karo: "))
@@ -124,7 +122,7 @@ def wyborWzoruDlaSciany():
                 print ("Niepoprawne dane")
             else:
                 print ("")
-                badInput = False
+                shouldContinue = False
 
         except SyntaxError:
             print ("Niepoprawne dane")
